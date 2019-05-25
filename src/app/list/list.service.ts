@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core'
-import { Observable } from 'rxjs'
+import { Observable, Subject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListService {
+  currentSubject: Subject<Object> = new Subject<Object>();
+  itemsSubject: Subject<any> = new Subject<any>();
+
   items: Object[] = [
     { id: '1', name: 'Item 1' },
     { id: '2', name: 'Item 2' },
@@ -14,25 +17,12 @@ export class ListService {
   ]
   current: Object = {}
 
-  constructor() { }
-
-  getItems(): any {
-    const itemsObservable = new Observable(observer => {
-      observer.next(this.items)
-    })
-
-    return itemsObservable
-  }
-
-  getCurrent(): any {
-    const currentObservable = new Observable(observer => {
-      observer.next(this.current)
-    })
-
-    return currentObservable
+  constructor() {
+    this.currentSubject.subscribe((current) => this.current = current)
+    this.itemsSubject.subscribe((items) => this.current = items)
   }
 
   setCurrent(item: Object): any {
-    this.current = item
+    this.currentSubject.next(item)
   }
 }

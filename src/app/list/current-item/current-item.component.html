@@ -1,2 +1,3 @@
-<p *ngIf="hasCurrent()"> Current Item: {{ itemsService.current.name }}</p>
-<p *ngIf="!hasCurrent()"> No items selected</p>
+<h2>Current Item:</h2>
+<h3 *ngIf="hasCurrent()"> {{ current.name }}</h3>
+<h3 *ngIf="!hasCurrent()"> No items selected</h3>

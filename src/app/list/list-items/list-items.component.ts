@@ -8,15 +8,13 @@ import { ListService } from '../list.service';
 })
 export class ListItemsComponent implements OnInit {
 
-  items: Object[] = []
-
   constructor(private itemsService: ListService) { }
 
   ngOnInit() {
-    // const itemsObservable = this.itemsService.getItems();
-    // itemsObservable.subscribe((items: Object[]) => {
-    //   this.items = items;
-    // });
+  }
+
+  get items(): Object[] {
+    return this.itemsService.items
   }
 
   onItemSelect(item: Object) {

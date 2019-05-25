@@ -8,15 +8,17 @@ import { ListService } from '../list.service';
 })
 export class CurrentItemComponent implements OnInit {
 
-  // current: Object = {}
-
   constructor(private itemsService: ListService) { }
 
   ngOnInit() {
   }
 
+  get current(): Object {
+    return this.itemsService.current;
+}
+
   hasCurrent() {
-    return JSON.stringify(this.itemsService.current) !== "{}"
+    return JSON.stringify(this.current) !== "{}"
   }
 
 }
