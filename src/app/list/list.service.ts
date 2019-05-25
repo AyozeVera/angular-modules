@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Observable, Subject } from 'rxjs'
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ListService {
   currentSubject: Subject<Object> = new Subject<Object>();
   itemsSubject: Subject<any> = new Subject<any>();
