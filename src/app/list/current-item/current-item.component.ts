@@ -4,7 +4,7 @@ import { ListService } from '../list.service';
 @Component({
   selector: 'app-current-item',
   templateUrl: './current-item.component.html',
-  styleUrls: ['./current-item.component.scss']
+  styleUrls: ['../list.component.scss', './current-item.component.scss']
 })
 export class CurrentItemComponent implements OnInit {
 
