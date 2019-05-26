@@ -1,10 +1,12 @@
 <h1>List component</h1>
 <div class="d-flex">
-  <div class="p-15 flex-1 bg-red">
+  <div class="p-15 flex-1 bg-red d-flex flex-column">
+    <ng-content select="[top]"></ng-content>
     <list-list-items></list-list-items>
+    <ng-content select="[bottom]"></ng-content>
   </div>
   <div class="p-15 flex-1 bg-blue">
-    <ng-content></ng-content>
+    <ng-content select="[form]"></ng-content>
     <!-- <list-current-item></list-current-item> -->
   </div>
 </div>

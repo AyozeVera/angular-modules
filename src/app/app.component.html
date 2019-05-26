@@ -5,5 +5,7 @@
   </h1>
 </div>
 <ng-list [items]="defaultItems" (onSelect)="onSelect($event)">
-  <app-form [data]="selected"></app-form>
+  <span top>Top</span>
+  <app-form [data]="selected" form></app-form>
+  <span bottom>Bottom</span>
 </ng-list>
