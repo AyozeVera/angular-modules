@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ListService } from '../list.service';
 
 @Component({
-  selector: 'app-current-item',
+  selector: 'list-current-item',
   templateUrl: './current-item.component.html',
   styleUrls: ['../list.component.scss', './current-item.component.scss']
 })
@@ -10,15 +10,10 @@ export class CurrentItemComponent implements OnInit {
 
   constructor(private itemsService: ListService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   get current(): Object {
     return this.itemsService.current;
-}
-
-  hasCurrent() {
-    return JSON.stringify(this.current) !== "{}"
   }
 
 }

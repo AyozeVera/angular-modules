@@ -7,10 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-modules';
+  selected = {};
+
   defaultItems = [
     { name: 'Item A' },
     { name: 'Item B' },
     { name: 'Item C' },
     { name: 'Item D' },
   ]
+  onSelect(data) {
+    this.selected = data
+  }
 }

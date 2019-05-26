@@ -4,4 +4,6 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<app-list [items]="defaultItems"></app-list>
+<ng-list [items]="defaultItems" (onSelect)="onSelect($event)">
+  <app-form [data]="selected"></app-form>
+</ng-list>
